@@ -1,0 +1,17 @@
+[SECTION: 9.3.1.1]
+Requirement: AC-8 System Use Notification
+Content: The system must display an approved IRS warning banner before granting access. 
+Expected Text: "I have read and understand that I am accessing a Federal Government information system. Usage may be monitored, recorded, and subject to audit."
+Location: /etc/issue (Unix) or Group Policy (Windows)
+
+[SECTION: 9.3.1.7]
+Requirement: AC-7 Unsuccessful Log On Attempts
+Content: The information system must enforce a limit of 3 consecutive invalid logon attempts by a user during a 15-minute period.
+Action: Automatically lock the account for at least 15 minutes.
+Target: /etc/security/faillock.conf
+
+[SECTION: 9.3.1.10]
+Requirement: AC-12 Session Termination
+Content: The system must automatically terminate a user session after 30 minutes of inactivity.
+Config: TMOUT=1800
+File: /etc/profile
